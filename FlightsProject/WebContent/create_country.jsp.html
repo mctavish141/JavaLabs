@@ -1,0 +1,22 @@
+<%@page import="com.flights.Resources.CountryResource"%>
+<%@page import="com.flights.Resources.TestServices"%>
+<%@ page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+</head>
+<body>
+        
+<%
+    WebResource service = TestServices.getService();
+    
+    String country_name = request.getParameter("country_name");
+    service.path("rest").path("countries").post(countryName);
+    
+    response.sendRedirect("/");
+%>
+
+</body>
+</html>
