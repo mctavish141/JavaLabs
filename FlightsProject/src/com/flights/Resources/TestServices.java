@@ -5,12 +5,12 @@ import java.util.List;
 public static class TestServices {
   public static void main(String[] args) {
     ClientConfig config = new DefaultClientConfig();
-	  Client client = Client.create(config);
-	  WebResource service = client.resource(getBaseURI());
+	Client client = Client.create(config);
+	WebResource service = client.resource(getBaseURI());
 	
     // Get all countries
     GenericType<List<Country>> genericType = new GenericType<List<Country>>() {};
-	  List<Country> countries = service.path("rest").path("countries")
+	List<Country> countries = service.path("rest").path("countries")
       .accept(MediaType.APPLICATION_XML).get(genericType);
 
     for (Country country : countries) {
@@ -30,6 +30,6 @@ public static class TestServices {
     service.path("rest").path("message").delete(1);
   }
   private static URI getBaseURI() {
-	  return UriBuilder.fromUri("http://localhost:8080/FlightsProject").build();
+	return UriBuilder.fromUri("http://localhost:8080/FlightsProject").build();
   }
 }
