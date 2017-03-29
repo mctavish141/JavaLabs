@@ -34,7 +34,6 @@ public static class CityResource {
   
   @DELETE
   @Path("/{id}")
-  @Consumes(MediaType.APPLICATION_XML)
   public void deleteCity(@PathParam("id") int id) {
     CityAccess.delete(id);
   }
