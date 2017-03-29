@@ -34,7 +34,6 @@ public static class CountryResource {
   
   @DELETE
   @Path("/{id}")
-  @Consumes(MediaType.APPLICATION_XML)
   public void deleteCountry(@PathParam("id") int id) {
     CountryAccess.delete(id);
   }
