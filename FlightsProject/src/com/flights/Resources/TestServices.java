@@ -19,15 +19,15 @@ public static class TestServices {
     
     // Create country
    	String countryName = "Russian Federation";
-    service.path("rest").path("message").post(countryName);
+    service.path("rest").path("countries").post(countryName);
     
     // Update country
     Country country = countries[0];
     country.name = "Poland";
-    service.path("rest").path("message").put(country.id, country.name);
+    service.path("rest").path("countries").put(country.id, country.name);
     
     // Delete country
-    service.path("rest").path("message").delete(1);
+    service.path("rest").path("countries").delete(1);
   }
   private static URI getBaseURI() {
 	return UriBuilder.fromUri("http://localhost:8080/FlightsProject").build();
