@@ -34,7 +34,6 @@ public static class PlaneResource {
   
   @DELETE
   @Path("/{id}")
-  @Consumes(MediaType.APPLICATION_XML)
   public void deletePlane(@PathParam("id") int id) {
     PlaneAccess.delete(id);
   }
