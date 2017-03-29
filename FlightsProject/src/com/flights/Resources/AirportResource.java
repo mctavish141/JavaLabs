@@ -34,7 +34,6 @@ public static class AirportResource {
   
   @DELETE
   @Path("/{id}")
-  @Consumes(MediaType.APPLICATION_XML)
   public void deleteAirport(@PathParam("id") int id) {
     AirportAccess.delete(id);
   }
