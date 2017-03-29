@@ -33,7 +33,7 @@ public static class AirlineResource {
   }
   
   @DELETE
-  @Path("{id}")
+  @Path("/{id}")
   @Consumes(MediaType.APPLICATION_XML)
   public void deleteAirline(@PathParam("id") int id) {
     AirlineAccess.delete(id);
