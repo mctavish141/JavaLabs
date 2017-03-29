@@ -4,9 +4,7 @@ import java.util.List;
 
 public static class TestServices {
   public static void main(String[] args) {
-    ClientConfig config = new DefaultClientConfig();
-	Client client = Client.create(config);
-	WebResource service = client.resource(getBaseURI());
+    WebResource service = getService();
 	
     // Get all countries
     GenericType<List<Country>> genericType = new GenericType<List<Country>>() {};
@@ -28,6 +26,13 @@ public static class TestServices {
     
     // Delete country
     service.path("rest").path("countries").delete(1);
+  }
+  public static WebResource getService() {
+	ClientConfig config = new DefaultClientConfig();
+	Client client = Client.create(config);
+	WebResource service = client.resource(getBaseURI());
+	  
+	return service;
   }
   private static URI getBaseURI() {
 	return UriBuilder.fromUri("http://localhost:8080/FlightsProject").build();
