@@ -34,7 +34,6 @@ public static class FlightResource {
   
   @DELETE
   @Path("{id}")
-  @Consumes(MediaType.APPLICATION_XML)
   public void deleteFlight(@PathParam("id") int id) {
     FlightAccess.delete(id);
   }
